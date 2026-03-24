@@ -75,8 +75,13 @@ const sequelize = new Sequelize(
     res.send('Hello World!');
   });
 
-// START UP AND AUTHENTICATE SERVER
+// START SERVER
 const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+// START UP AND AUTHENTICATE SERVER
 const startServer = async () => {
     try {
     await sequelize.authenticate();
